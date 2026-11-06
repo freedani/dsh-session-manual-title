@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" role="img" aria-label="AI Rename">
+  <defs>
+    <linearGradient id="session-manual-title-pencil" x1="6" y1="30" x2="30" y2="6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3AAFA9"/>
+      <stop offset="1" stop-color="#1F7A8C"/>
+    </linearGradient>
+  </defs>
+  <!-- pencil body: the rename this plugin performs -->
+  <path d="M8 24L24 8L28 12L12 28Z" fill="url(#session-manual-title-pencil)"/>
+  <path d="M24 8L28 12L30.4 9.6L26.4 5.6Z" fill="#1F5F6E"/>
+  <path d="M8 24L12 28L5 31Z" fill="#14505C"/>
+  <!-- sparkle: the model writing the name -->
+  <path d="M28 21.8L29.15 24.85L32.2 26L29.15 27.15L28 30.2L26.85 27.15L23.8 26L26.85 24.85Z" fill="#FFB74D"/>
+</svg>

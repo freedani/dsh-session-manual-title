@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "AI Rename",
+    "description": "Adds \"Rename with AI\" to the session menu and the session header: one click summarizes the whole conversation into a title, reusing the main request's prefix cache. Nothing runs on its own, so it costs nothing until you click."
+  }
+}

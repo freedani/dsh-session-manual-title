@@ -1,0 +1,21 @@
+# AI 重命名：会话行「…」菜单 + 顶栏各一个入口，点一次才跑一次。
+#
+# 不注册 `sessionTitle` provider（那是独占的、由服务按每条消息驱动），所以
+# 不会像 all-prompts 那样每来一条消息就烧一次 token；也不影响已经装着的自动标题。
+- insert:
+    - id: session-manual-title
+      name: dsh-session-manual-title
+      config:
+        # 核心开关：把辅助请求建在主请求的精确前缀上（tools + 全量历史 + 原样的
+        # reasoningEffort / temperature），这样前面那一大段历史能命中 provider 的
+        # prefix cache，只有末尾那条「给它起个标题」的指令是全价。
+        # 关掉它会退回「截断尾部」的自包含请求：输入小，但必然全价 miss。
+        sharePromptCache: true
+        # 输出上限，不是长度目标：推理模型会先花输出预算思考。
+        maxOutputTokens: 4096
+        timeoutMs: 45000
+        # 标题长度目标：非 CJK 约 6 词 / CJK 约 12 字（写进提示词里）。
+        targetWords: 6
+        targetCjkCharacters: 12
+        # 退回 tail 模式时最多读多少字符。
+        tailMaxChars: 8000
